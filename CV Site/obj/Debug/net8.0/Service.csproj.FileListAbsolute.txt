@@ -1,0 +1,13 @@
+E:\תכנות\שנה ב\פרקטיקוד\פרוייקט 5 - CV site\CV Site\CV Site\bin\Debug\net8.0\Service.deps.json
+E:\תכנות\שנה ב\פרקטיקוד\פרוייקט 5 - CV site\CV Site\CV Site\bin\Debug\net8.0\Service.dll
+E:\תכנות\שנה ב\פרקטיקוד\פרוייקט 5 - CV site\CV Site\CV Site\bin\Debug\net8.0\Service.pdb
+E:\תכנות\שנה ב\פרקטיקוד\פרוייקט 5 - CV site\CV Site\CV Site\obj\Debug\net8.0\Service.csproj.AssemblyReference.cache
+E:\תכנות\שנה ב\פרקטיקוד\פרוייקט 5 - CV site\CV Site\CV Site\obj\Debug\net8.0\Service.GeneratedMSBuildEditorConfig.editorconfig
+E:\תכנות\שנה ב\פרקטיקוד\פרוייקט 5 - CV site\CV Site\CV Site\obj\Debug\net8.0\Service.AssemblyInfoInputs.cache
+E:\תכנות\שנה ב\פרקטיקוד\פרוייקט 5 - CV site\CV Site\CV Site\obj\Debug\net8.0\Service.AssemblyInfo.cs
+E:\תכנות\שנה ב\פרקטיקוד\פרוייקט 5 - CV site\CV Site\CV Site\obj\Debug\net8.0\Service.csproj.CoreCompileInputs.cache
+E:\תכנות\שנה ב\פרקטיקוד\פרוייקט 5 - CV site\CV Site\CV Site\obj\Debug\net8.0\Service.dll
+E:\תכנות\שנה ב\פרקטיקוד\פרוייקט 5 - CV site\CV Site\CV Site\obj\Debug\net8.0\refint\Service.dll
+E:\תכנות\שנה ב\פרקטיקוד\פרוייקט 5 - CV site\CV Site\CV Site\obj\Debug\net8.0\Service.pdb
+E:\תכנות\שנה ב\פרקטיקוד\פרוייקט 5 - CV site\CV Site\CV Site\obj\Debug\net8.0\ref\Service.dll
+E:\תכנות\שנה ב\פרקטיקוד\פרוייקט 5 - CV site\CV Site\CV Site\obj\Debug\net8.0\Service.sourcelink.json

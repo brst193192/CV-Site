@@ -1,0 +1,908 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Api",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/CvSite/GetPortfolio": {
+      "get": {
+        "tags": [
+          "CvSite"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Portfolio"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Portfolio"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Portfolio"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CvSite/SearchRepositories": {
+      "get": {
+        "tags": [
+          "CvSite"
+        ],
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "repoName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/Language"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Repository"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Repository"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Repository"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AccountType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "AdvancedSecurity": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DependabotSecurityUpdates": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Language": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          194
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "LicenseMetadata": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "nodeId": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "spdxId": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "featured": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Plan": {
+        "type": "object",
+        "properties": {
+          "collaborators": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "privateRepos": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "space": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "billingEmail": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "filledSeats": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "seats": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Portfolio": {
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "repositories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Repository"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Repository": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "htmlUrl": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "cloneUrl": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "gitUrl": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "sshUrl": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "svnUrl": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "mirrorUrl": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "archiveUrl": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "nodeId": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "owner": {
+            "$ref": "#/components/schemas/User"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "fullName": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "isTemplate": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "homepage": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "language": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "private": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "fork": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "forksCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "stargazersCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "watchersCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "defaultBranch": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "openIssuesCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "pushedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "permissions": {
+            "$ref": "#/components/schemas/RepositoryPermissions"
+          },
+          "parent": {
+            "$ref": "#/components/schemas/Repository"
+          },
+          "source": {
+            "$ref": "#/components/schemas/Repository"
+          },
+          "license": {
+            "$ref": "#/components/schemas/LicenseMetadata"
+          },
+          "hasDiscussions": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "hasIssues": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "hasWiki": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "hasDownloads": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "allowRebaseMerge": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "allowSquashMerge": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "allowMergeCommit": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "hasPages": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "subscribersCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "size": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "archived": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "topics": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "deleteBranchOnMerge": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/RepositoryVisibility"
+          },
+          "allowAutoMerge": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "allowUpdateBranch": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "webCommitSignoffRequired": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "securityAndAnalysis": {
+            "$ref": "#/components/schemas/SecurityAndAnalysis"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RepositoryPermissions": {
+        "type": "object",
+        "properties": {
+          "admin": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "maintain": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "push": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "triage": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "pull": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RepositoryVisibility": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "SecretScanning": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SecretScanningPushProtection": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SecretScanningValidityChecks": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SecurityAndAnalysis": {
+        "type": "object",
+        "properties": {
+          "advancedSecurity": {
+            "$ref": "#/components/schemas/AdvancedSecurity"
+          },
+          "dependabotSecurityUpdates": {
+            "$ref": "#/components/schemas/DependabotSecurityUpdates"
+          },
+          "secretScanning": {
+            "$ref": "#/components/schemas/SecretScanning"
+          },
+          "secretScanningPushProtection": {
+            "$ref": "#/components/schemas/SecretScanningPushProtection"
+          },
+          "secretScanningValidityChecks": {
+            "$ref": "#/components/schemas/SecretScanningValidityChecks"
+          }
+        },
+        "additionalProperties": false
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "avatarUrl": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "bio": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "blog": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "collaborators": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "company": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "diskUsage": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "followers": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "following": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "hireable": {
+            "type": "boolean",
+            "nullable": true,
+            "readOnly": true
+          },
+          "htmlUrl": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "nodeId": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "login": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/AccountType"
+          },
+          "ownedPrivateRepos": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "plan": {
+            "$ref": "#/components/schemas/Plan"
+          },
+          "privateGists": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "publicGists": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "publicRepos": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "totalPrivateRepos": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "permissions": {
+            "$ref": "#/components/schemas/RepositoryPermissions"
+          },
+          "siteAdmin": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "suspendedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true
+          },
+          "suspended": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "ldapDistinguishedName": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
